@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Breadcrumb from "../ChildPage/Breadcrumb";
 
 // Import category images
 import vanue from "../assets/Venues.webp";
@@ -19,7 +18,6 @@ import { faAngleDown, faAngleUp, faAngleRight } from "@fortawesome/free-solid-sv
 const Vendor = () => {
   const navigate = useNavigate();
   const [openIndex, setOpenIndex] = useState(null);
-  const [breadcrumbPaths, setBreadcrumbPaths] = useState([{ name: "Home", link: "/" }]);
 
   const categories = [
     {
@@ -156,24 +154,16 @@ const Vendor = () => {
   const toggleDropdown = (index) => setOpenIndex(openIndex === index ? null : index);
 
   const handleSubcategoryClick = (cat, sub) => {
-    setBreadcrumbPaths([
-      { name: "Home", link: "/" },
-      { name: cat.title, link: `/${cat.title.toLowerCase()}` },
-      { name: sub.name, link: sub.link },
-    ]);
-    navigate(sub.link);
+    setOpenIndex(null); // close dropdown
+    navigate(sub.link); // breadcrumb updates automatically from URL
   };
 
-  const handleBreadcrumbClick = (index) => {
-    const path = breadcrumbPaths[index];
-    setBreadcrumbPaths((prev) => prev.slice(0, index + 1));
-    navigate(path.link);
-  };
+
+
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-6">
-      {/* Breadcrumb */}
-      <Breadcrumb paths={breadcrumbPaths} onClickPath={handleBreadcrumbClick} />
+
 
       <h1 className="text-4xl font-bold py-2 text-rose-500 mb-4">Wedding Categories</h1>
 

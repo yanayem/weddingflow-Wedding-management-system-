@@ -12,6 +12,7 @@ import ScrollToTop from "./ChildPage/ScrollToTop";
 import Breadcrumb from "./ChildPage/Breadcrumb";
 
 import GroomPhotography from "./ChildPage/Vendor/Photography/GroomPhotography";
+import BridePhotography from "./ChildPage/Vendor/Photography/BridePhotography";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/vendor" element={<Vendor />} />
             <Route path="/photography/groom" element={<GroomPhotography />} />
+            <Route path="photography/bride" element={<BridePhotography />} />
             <Route path="/about" element={<AboutMe />} />
             <Route path="/contact" element={<ContactSection />} />
           </Routes>

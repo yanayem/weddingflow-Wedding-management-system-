@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="bg-rose-200 px-4 py-6 animate-footer">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        
+
         {/* Brand */}
         <h2 className="font-semibold text-lg">WeddingFlow</h2>
 
@@ -32,7 +32,7 @@ const Footer = () => {
           © {new Date().getFullYear()} WeddingFlow. All rights reserved.
           <br className="md:hidden" />
           <span className="ml-1">
-            Developed by <span className="font-medium">JM Raita</span>
+            Developed by <a href="https://github.com/yanayem"> <span className="font-base">Yeasin Arafat Nayem Bhuiyan</span></a>
           </span>
         </p>
       </div>
